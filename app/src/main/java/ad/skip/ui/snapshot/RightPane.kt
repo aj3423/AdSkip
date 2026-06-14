@@ -95,8 +95,7 @@ fun SelectedNodeDetails(
     val queryFieldBanPrefs = remember(ctx) { spf.QueryFieldBan(ctx) }
     val onSurfaceColor = MaterialTheme.colorScheme.onSurface
     val successBorderColor = Color(0xFF4CAF50)
-    val rowSpacing = 2.dp
-    val sectionSpacing = 10.dp
+    val sectionSpacing = 4.dp
     selectedNode?.let { node ->
         var showAdvancedFields by remember(node) { mutableStateOf(false) }
         val commonDetailRows = buildList {
@@ -167,7 +166,6 @@ fun SelectedNodeDetails(
         Spacer(modifier = Modifier.height(sectionSpacing))
         commonDetailRows.forEach { (label, value) ->
             Text("$label: $value", color = onSurfaceColor)
-            Spacer(modifier = Modifier.height(rowSpacing))
         }
 
         Spacer(modifier = Modifier.height(sectionSpacing))
@@ -187,24 +185,18 @@ fun SelectedNodeDetails(
             )
         }
         if (showAdvancedFields) {
-            Spacer(modifier = Modifier.height(rowSpacing))
             advancedDetailRows.forEach { (label, value) ->
                 Text("$label: $value", color = onSurfaceColor)
-                Spacer(modifier = Modifier.height(rowSpacing))
             }
             if (node.attributes.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(rowSpacing))
                 Text("Other attributes:", color = onSurfaceColor)
                 node.attributes.forEach { (key, value) ->
-                    Spacer(modifier = Modifier.height(rowSpacing))
                     Text("$key: $value", color = onSurfaceColor)
                 }
             }
             if (node.extras.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(rowSpacing))
                 Text("Extras:", color = onSurfaceColor)
                 node.extras.forEach { (key, value) ->
-                    Spacer(modifier = Modifier.height(rowSpacing))
                     Text("$key: $value", color = onSurfaceColor)
                 }
             }
@@ -239,7 +231,6 @@ fun SelectedNodeDetails(
                 }
             }
         }
-        Spacer(modifier = Modifier.height(rowSpacing))
         OutlinedTextField(
             value = queryPathDraft.value,
             onValueChange = { queryPathDraft.value = it },
