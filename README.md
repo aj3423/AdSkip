@@ -28,7 +28,7 @@ When an ad appears, press both **Volume Up + Volume Down** to capture a snapshot
   
   - Left pane: Tap on the screenshot to select the "close" or "skip" button (**long press** to zoom in).
   - Middle pane: Shows the full window hierarchy. The selected item is automatically focused.
-  - Right pane: Displays the detected unique path of the element. You can review or manually edit it here.
+  - Right pane: The app automatically tries to find the unique path of the selected element. You can also manually edit it.
 
 ### 4. Save the rule
   If a unique path is found, tap **Save Rule** in the right pane, it will appear in the Rules tab and become active immediately.
