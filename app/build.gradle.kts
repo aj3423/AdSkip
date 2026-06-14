@@ -17,7 +17,7 @@ android {
             enableV2Signing = false
             enableV3Signing = true
 
-            storeFile = file("../../keystore.jks")
+            storeFile = file(System.getenv("ANDROID_KEYSTORE_PATH") ?: "keystore.jks")
             storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
             keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
             keyAlias = System.getenv("ANDROID_KEY_ALIAS")
