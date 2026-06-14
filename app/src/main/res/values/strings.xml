@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AdSkip</string>
+    <string name="accessibility_service_description">Accessibility service for capturing UI snapshots and auto-click rules.</string>
+</resources>
